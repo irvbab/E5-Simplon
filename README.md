@@ -62,17 +62,15 @@ J'ai implémenté une fonction intermédiaire qui vérifie l'état de l'objet de
 
 const checkDatabaseState = (req, res, next) => {
 
-&#x20;   if (!db || !db.open) {
+   if (!db || !db.open) {
 
-&#x20;       return res.status(503).json({
+      return res.status(503).json({
 
-&#x20;           error: "Service Unavailable",
+           error: "Service Unavailable",
 
-&#x20;           message: "La connexion à la base de données a été perdue."
-
-&#x20;       });
-
-&#x20;   }
+           message: "La connexion à la base de données a été perdue."
+       });
+   }
 
 &#x20;   next();
 
